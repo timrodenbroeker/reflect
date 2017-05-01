@@ -1,0 +1,56 @@
+body {
+  margin: 0;
+  padding: 0;
+}
+
+#thecanvas {
+    width: 100%;
+    height: 95vh;
+    background: #eeeeee;
+}
+
+#thebackground {
+    width: 100%;
+    height: 95vh;
+    overflow: hidden;
+    }
+    
+    
+.flexcenter {    
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}    
+
+#intro {    
+  width: 100%;
+  height: 95vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.clear {clear: both;}
+
+.h95 {height: 95vh; width: 100%;}
+
+
+#timeline-container {
+    position: relative;
+    height: 5vh; 
+    width: 100%; 
+    background: #eeeeee;
+}
+
+#timeline {
+    position: absolute;
+    height: 5vh; width: 0px; background: #f54123;
+}
+
+.redbg {
+    background: #f54123;
+    }
+
+.finish {background: #eeeeee;}
+
+	
