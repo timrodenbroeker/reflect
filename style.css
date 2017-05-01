@@ -54,3 +54,11 @@ body {
 .finish {background: #eeeeee;}
 
 	
+#p5_loading {
+font-weight: normal;
+position:fixed;
+font-size: 50px;
+top:40vh;
+width:100%;
+text-align: center;
+}
