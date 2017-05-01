@@ -1,4 +1,4 @@
 ![reflect](https://timrodenbroeker.github.io/reflect/preview.gif)
 
 # reflect
-reflect – an interactive music experience made with p5.js
+"reflect" is an experimental, interactive music experience, optimized for google chrome, coded with javascript and p5.js. music: "reflect" by stereophob, mira nørr and injuvik.

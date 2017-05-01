@@ -69,7 +69,7 @@ background(map(sin(a/60),-1,1,0,100));
 
 	push();
 
-  texture(ani1[chooseTexture]);
+  texture(img2);
 	rotateY(radians(map(mouseX, 0, width, -50, 50)));
 	rotateZ(radians(map(mouseX, 0, width, -50, 50)));
 	translate(0, 0, -1400);
