@@ -1,7 +1,6 @@
 // preload these files
 function preload() {
 	mySound = loadSound('reflect.mp3');
-	reflect_typo1 = loadImage("images/reflect-mineral.gif");
 	img0 = loadImage("images/0.gif");
 	img1 = loadImage("images/1.gif");
 	img1a = loadImage("images/1a.gif");
