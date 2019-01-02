@@ -1,6 +1,6 @@
 function runthetrack() {
   mySound.play();
   playing = true;
-  $("#play").fadeOut();
-  $("#intro").fadeOut();
+  $("#play").fadeOut("slow");
+  $("#intro").fadeOut("slow");
 }

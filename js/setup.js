@@ -1,5 +1,3 @@
-$("#navbar").css("background", "transparent");
-
 // COLOR
 
 var $win = $(window),
@@ -52,6 +50,10 @@ $(document).mousemove(function(event) {
 });
 
 function setup() {
+  $(".showwhenloading").fadeOut("slow", function() {
+    $(".showwhenready").fadeIn("slow");
+  });
+
   canvas = createCanvas(
     $("#thecanvas").width(),
     $("#thecanvas").height(),

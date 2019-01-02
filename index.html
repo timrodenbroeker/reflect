@@ -47,7 +47,9 @@
 
         <div id="intro">
             <h1>
-             Reflect is an interactive music experience for your web-browser. Click the play-button to run the track.
+             "Reflect" is an interactive music experience for your web-browser. 
+             <span class="showwhenready" style="display: none;">Click the play-button to run the track.</span>
+             <span class="showwhenloading" style="display: none;">Please wait a short moment, the resources are loading.</span>
             </h1>
             <!-- <ul id="meta">
                 <li>Concept, Design, Code: <a target="_blank" href="https://timrodenbroeker.de/">Tim Rodenbröker</a></li>
@@ -60,7 +62,7 @@
 
 
 
-        <div id="play">            
+        <div id="play" class="showwhenready" style="display: none;">            
             <svg onclick="runthetrack()" id="" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 401.7 443.3"><style>.st0{fill:#ff0000}</style><path class="st0" d="M395.1 212.8L16 2.1C11.6-.4 7.8-.7 4.7 1.2 1.6 3.1 0 6.6 0 11.5v420.3c0 5 1.6 8.4 4.7 10.3 3.1 1.9 6.9 1.6 11.3-.9l379.1-210.7c4.4-2.5 6.6-5.4 6.6-8.9 0-3.4-2.2-6.3-6.6-8.8z"/></svg>
         </div>
     </body>
