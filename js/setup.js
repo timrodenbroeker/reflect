@@ -1,126 +1,147 @@
-   $('#navbar').css('background','transparent');  
+$("#navbar").css("background", "transparent");
 
-// COLOR 
+// COLOR
 
 var $win = $(window),
-    w = 0,h = 0,
-    rgb1 = [],
-    rgb2 = [],    
-    getWidth = function() {
-        w = $win.width();
-        h = $win.height();
-    };
+  w = 0,
+  h = 0,
+  rgb1 = [],
+  rgb2 = [],
+  getWidth = function() {
+    w = $win.width();
+    h = $win.height();
+  };
 
-$win.resize(getWidth).mousemove(function(e) {
-    
+$win
+  .resize(getWidth)
+  .mousemove(function(e) {
     rgb1 = [
-        Math.round(e.pageX/w * 255),
-        Math.round(e.pageX/w * 255),
-        Math.round(e.pageX/w * 255)
+      Math.round((e.pageX / w) * 255),
+      Math.round((e.pageX / w) * 255),
+      Math.round((e.pageX / w) * 255)
     ];
-  
+
     rgb2 = [
-        Math.round(e.pageX/w * 255),
-        Math.round(e.pageX/w * 255),
-        Math.round(e.pageX/w * 255)
+      Math.round((e.pageX / w) * 255),
+      Math.round((e.pageX / w) * 255),
+      Math.round((e.pageX / w) * 255)
     ];
-    
-   $('#logo').css('color','rgb('+rgb2.join(',')+')');
-   $('#navbar a').css('color','rgb('+rgb2.join(',')+')');  
-   $('#logo').css('border-color','rgb('+rgb2.join(',')+')');   
-   
-    }).resize();
-    
-  
-  
+
+    $("#logo").css("color", "rgb(" + rgb2.join(",") + ")");
+    $("#navbar a").css("color", "rgb(" + rgb2.join(",") + ")");
+    $("#logo").css("border-color", "rgb(" + rgb2.join(",") + ")");
+  })
+  .resize();
+
 // Invert on mouse position
 
+$(document).mousemove(function(event) {
+  if (szene < 13) {
+    mappedRange = Math.floor((100 * event.pageX) / window.innerWidth);
+    var flt1 = "invert(";
+    var flt2 = "%)";
+    var filterVal = flt1.concat(mappedRange, flt2);
 
-  $(document).mousemove(function(event){
-
-
-if (szene < 13){
-      mappedRange = Math.floor(100 * event.pageX / window.innerWidth);
-      var flt1 = "invert(";
-      var flt2 = "%)";
-      var filterVal = flt1.concat(mappedRange,flt2);
-
-      $('canvas')
-        .css('filter',filterVal)
-        .css('webkitFilter',filterVal)
-        .css('mozFilter',filterVal)
-        .css('oFilter',filterVal)
-        .css('msFilter',filterVal); 
-  } 
-     
+    $("canvas")
+      .css("filter", filterVal)
+      .css("webkitFilter", filterVal)
+      .css("mozFilter", filterVal)
+      .css("oFilter", filterVal)
+      .css("msFilter", filterVal);
+  }
 });
 
 function setup() {
-  canvas = createCanvas($("#thecanvas").width(), $("#thecanvas").height(),
-    WEBGL);
-  canvas.parent('thecanvas');
+  canvas = createCanvas(
+    $("#thecanvas").width(),
+    $("#thecanvas").height(),
+    WEBGL
+  );
+  canvas.parent("thecanvas");
   rectMode(CENTER);
   imageMode(CENTER);
   colorMode(HSB, 360, 100, 100);
-    noStroke();
-var rms;
-// frameRate(30);
+  noStroke();
+  var rms;
+  // frameRate(30);
 
-// Image-Objekte in das imagearray laden
+  // Image-Objekte in das imagearray laden
 
-imagearray = [img1,img2,img3,img4,img5,img6,img7,img8,img9,img10,img11,img12,img13,img14,img15, img16, img17, img18, img19, img20,img21,img22];
+  imagearray = [
+    img1,
+    img2,
+    img3,
+    img4,
+    img5,
+    img6,
+    img7,
+    img8,
+    img9,
+    img10,
+    img11,
+    img12,
+    img13,
+    img14,
+    img15,
+    img16,
+    img17,
+    img18,
+    img19,
+    img20,
+    img21,
+    img22
+  ];
 
+  ani1 = [
+    ani1_00,
+    ani1_01,
+    ani1_03,
+    ani1_04,
+    ani1_05,
+    ani1_06,
+    ani1_07,
+    ani1_08,
+    ani1_09,
+    ani1_10,
+    ani1_11,
+    ani1_12,
+    ani1_13,
+    ani1_14,
+    ani1_15,
+    ani1_16,
+    ani1_17,
+    ani1_18,
+    ani1_19,
+    ani1_20,
+    ani1_21,
+    ani1_22,
+    ani1_23,
+    ani1_24,
+    ani1_25,
+    ani1_26,
+    ani1_27,
+    ani1_28,
+    ani1_29,
+    ani1_30,
+    ani1_31,
+    ani1_32,
+    ani1_33,
+    ani1_34
+  ];
 
-ani1 = [ani1_00,
-ani1_01,
-ani1_03,
-ani1_04,
-ani1_05,
-ani1_06,
-ani1_07,
-ani1_08,
-ani1_09,
-ani1_10,
-ani1_11,
-ani1_12,
-ani1_13,
-ani1_14,
-ani1_15,
-ani1_16,
-ani1_17,
-ani1_18,
-ani1_19,
-ani1_20,
-ani1_21,
-ani1_22,
-ani1_23,
-ani1_24,
-ani1_25,
-ani1_26,
-ani1_27,
-ani1_28,
-ani1_29,
-ani1_30,
-ani1_31,
-ani1_32,
-ani1_33,
-ani1_34];
-
-ani2 = [img55, img56, img57, img58, img59, img60];
-
-
+  ani2 = [img55, img56, img57, img58, img59, img60];
 
   // create a new Amplitude analyzer
-    analyzer = new p5.Amplitude();
+  analyzer = new p5.Amplitude();
 
-    // Patch the input to an volume analyzer
-    analyzer.setInput(mySound);
+  // Patch the input to an volume analyzer
+  analyzer.setInput(mySound);
 
   // orbitControl();
   // Erste Szene: Logo vergrößern
-  $('.fauxpaslogo').addClass('grow');
+  $(".fauxpaslogo").addClass("grow");
 
-  mySound.play();
+  // mySound.play();
   // mySound.jump(60);
 
   // Variablen
@@ -129,8 +150,6 @@ ani2 = [img55, img56, img57, img58, img59, img60];
 
   a = 0;
   aa = 0;
-
-
 
   // Für Szene 3: Array mit Objekten erstellen
   for (var i = 0; i < 300; i++) {
@@ -148,20 +167,18 @@ ani2 = [img55, img56, img57, img58, img59, img60];
   // Here i add the lights. Unfortunately there's no function to disable them later.
   // directionalLight(100, 0, 10, map(mouseX,0,width,-10,10), map(mouseY,0,height,10,-10), 8);
 
-
   // ************************
   // CUEPOINTS
   // ************************
 
-
-// Kickdrum & Woodstick
-    for (var i = 0; i < woodStick.length; i++) {
+  // Kickdrum & Woodstick
+  for (var i = 0; i < woodStick.length; i++) {
     mySound.addCue(woodStick[i], function() {
       woodStickTrigger = !woodStickTrigger;
     });
   }
 
-    for (var i = 0; i < kickdrum.length; i++) {
+  for (var i = 0; i < kickdrum.length; i++) {
     mySound.addCue(kickdrum[i], function() {
       kickdrumTrigger = !kickdrumTrigger;
       kickdrumValue = 1;
@@ -173,7 +190,7 @@ ani2 = [img55, img56, img57, img58, img59, img60];
     szene = 0;
     szenenwahl = 0;
     a = 0;
-    // Array 
+    // Array
   });
 
   // Szene 1 Drums kommen rein
@@ -185,7 +202,7 @@ ani2 = [img55, img56, img57, img58, img59, img60];
 
   // Szene 1a Logo ausfaden
   mySound.addCue(11.075, function() {
-    $('.fauxpaslogo').removeClass('grow');
+    $(".fauxpaslogo").removeClass("grow");
   });
 
   // Szene 2 Bass kommt rein
@@ -203,8 +220,6 @@ ani2 = [img55, img56, img57, img58, img59, img60];
     a = 0;
     chooseTexture1 = 0;
   });
-
-
 
   mySound.addCue(48, function() {});
 
@@ -240,7 +255,6 @@ ani2 = [img55, img56, img57, img58, img59, img60];
   mySound.addCue(122.75, function() {
     szene = 8;
     szenenwahl = 8;
-
   });
 
   // Szene 9 Drums runter, Harmonie kommt wieder rein
@@ -254,7 +268,6 @@ ani2 = [img55, img56, img57, img58, img59, img60];
   mySound.addCue(180.9, function() {
     szene = 10;
     szenenwahl = 10;
-    
   });
 
   // Szene 11 Outro 2
@@ -267,15 +280,13 @@ ani2 = [img55, img56, img57, img58, img59, img60];
   mySound.addCue(203.1, function() {
     szene = 12;
     szenenwahl = 12;
-
   });
 
   // Szene 13 Schlussakkord
   mySound.addCue(210.969, function() {
     szene = 13;
-    $('canvas').fadeOut('slow');  
-    $('#timeline').fadeOut('slow');
-    $('#timeline-container').addClass('redbg');    
+    $("canvas").fadeOut("slow");
+    $("#timeline").fadeOut("slow");
+    $("#timeline-container").addClass("redbg");
   });
-
-}; // /setup
+} // /setup

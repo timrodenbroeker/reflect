@@ -1,66 +1,138 @@
+@font-face {
+  font-family: "reglo";
+  src: url("Reglo-Bold.woff") format("woff"); /* Pretty Modern Browsers */
+  font-weight: 700;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
-  text-transform: lowercase;
+
+  font-family: monospace;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: "reglo", sans-serif;
+  text-transform: uppercase;
+  font-weight: 700;
 }
 
 #thecanvas {
-    width: 100%;
-    height: 95vh;
-    background: #eeeeee;
+  width: 100%;
+  height: 99vh;
+  background: #eeeeee;
 }
 
 #thebackground {
-    width: 100%;
-    height: 95vh;
-    overflow: hidden;
-    }
-    
-    
-.flexcenter {    
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}    
-
-#intro {    
   width: 100%;
-  height: 95vh;
+  height: 99vh;
+  overflow: hidden;
+}
+
+.flexcenter {
   display: flex;
   align-items: center;
   justify-content: center;
 }
 
-.clear {clear: both;}
+.clear {
+  clear: both;
+}
 
-.h95 {height: 95vh; width: 100%;}
-
+.h99 {
+  height: 99vh;
+  width: 100%;
+}
 
 #timeline-container {
-    position: relative;
-    height: 5vh; 
-    width: 100%; 
-    background: #eeeeee;
+  position: relative;
+  height: 1vh;
+  width: 100%;
+  background: #eeeeee;
 }
 
 #timeline {
-    position: absolute;
-    height: 5vh; width: 0px; background: #f54123;
+  position: absolute;
+  height: 1vh;
+  width: 0px;
+  background: #f54123;
 }
 
 .redbg {
-    background: #f54123;
-    }
+  background: #f54123;
+}
 
-.finish {background: #eeeeee;}
+.finish {
+  background: #eeeeee;
+}
 
-	
 #p5_loading {
-font-weight: normal;
-position:fixed;
-font-size: 50px;
-top:40vh;
-width:100%;
-text-align: center;
+  font-weight: normal;
+  position: absolute;
+  font-size: 15px;
+  top: 0;
+  right: 0;
+  padding: 15px;
+}
+
+#intro {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+  z-index: 9;
+
+  padding: 15px;
+  /* display: flex; */
+}
+
+#intro * {
+  width: 100%;
+}
+
+#intro h1 {
+  margin: 0;
+  padding: 0;
+  font-size: calc(16px + 2vw);
+}
+
+#meta {
+}
+
+#play {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#play svg {
+  fill: red;
+  width: 70px;
+  height: 70px;
+  transition: all 0.3s ease;
+  cursor: pointer;
+  position: relative;
+  z-index: 9999999;
+}
+
+#play svg:hover {
+  transform: scale(1.7);
+}
+
+ul,
+li {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
